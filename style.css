@@ -1,0 +1,65 @@
+background: radial-gradient(circle, yellow, transparent);
+.moon:first-of-type {
+    display: none;
+}
+.moon {
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Ensure exact centering */
+    width: 100px;
+    z-index: 20;
+}
+.moon-container {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    position: absolute;
+    top: 5%; /* Adjust vertical position */
+    width: 100%; /* Ensure it spans the full width */
+}
+.moon {
+    position: absolute;
+    top: 5%; /* Move it higher */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 20; /* Keep it above other elements */
+}
+.leaf-container {
+    position: absolute;
+    top: 12%; /* Adjust to be near the moon */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; 
+    height: 100px;
+    z-index: 15; /* Above the moon */
+}
+
+.leaf {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    transition: transform 2s ease-in-out;
+}
+
+.left-leaf {
+    left: 0;
+    transform-origin: right center; /* Rotate from the right */
+    animation: openLeft 2s ease-in-out forwards;
+}
+
+.right-leaf {
+    right: 0;
+    transform-origin: left center; /* Rotate from the left */
+    animation: openRight 2s ease-in-out forwards;
+}
+.clouds {
+    filter: blur(3px);
+    opacity: 0.9;
+}
+.blur-image {
+    z-index: 10; /* Ensure it's behind the moon */
+}
+.moon {
+    transform: translate(-50%, -20px); /* Move it up by 20px */
+}

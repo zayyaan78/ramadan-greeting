@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan Mubarak</title>
+    <style>
+      /* Body Styling */
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: radial-gradient(circle, #002147, #000a1f);
+        text-align: center;
+        font-family: "Arial", sans-serif;
+        color: white;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Stars Background */
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 2s infinite alternate;
+        opacity: 0;
+      }
+
+      @keyframes twinkle {
+        0% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.2);
+        }
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+      }
+
+      /* Realistic Clouds */
+      .cloud {
+        position: absolute;
+        width: 300px;
+        height: auto;
+        top: 30%;
+        opacity: 0.9;
+        animation: cloudMove 4s ease-in-out forwards;
+      }
+
+      .cloud1 {
+        left: 25%;
+        animation-name: moveLeft;
+      }
+
+      .cloud2 {
+        right: 25%;
+        animation-name: moveRight;
+      }
+
+      @keyframes moveLeft {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-250px);
+        }
+      }
+
+      @keyframes moveRight {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(250px);
+        }
+      }
+
+      /* Crescent Moon */
+      .moon {
+        position: absolute;
+        top: 30%;
+        width: 90px;
+        height: 90px;
+        background: radial-gradient(circle at 40% 40%);
+        border-radius: 50%;
+        box-shadow: 0 0 15px #ffd700;
+        transform: scale(0);
+        animation: appearMoon 3s ease-in-out 2s forwards;
+        clip-path: ellipse(50% 90% at 60% 50%);
+      }
+
+      @keyframes appearMoon {
+        from {
+          transform: scale(0);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      /* Floating Lanterns */
+      .lantern {
+        position: absolute;
+        width: 50px;
+        height: auto;
+        opacity: 0.8;
+        animation: floatLantern 10s linear infinite;
+      }
+
+      .lantern1 {
+        left: 10%;
+        animation-delay: 2s;
+      }
+      .lantern2 {
+        left: 50%;
+        animation-delay: 4s;
+      }
+      .lantern3 {
+        left: 80%;
+        animation-delay: 6s;
+      }
+
+      @keyframes floatLantern {
+        0% {
+          transform: translateY(100px) scale(0.8);
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-500px) scale(1);
+          opacity: 0;
+        }
+      }
+
+      /* Greeting Card */
+      .greeting {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #00aaff;
+        animation:
+          pulse 2s infinite alternate,
+          slideIn 4s ease-out;
+        opacity: 0;
+        animation-fill-mode: forwards;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Ramadan Mubarak Text */
+      h1 {
+        font-size: 3rem;
+        color: #00c3ff;
+        text-shadow: 2px 2px 20px #00c3ff;
+        animation: shimmer 3s infinite linear;
+      }
+
+      /* Paragraph Text */
+      p {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #99e6ff;
+      }
+
+      /* Keyframe Animations */
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 15px #00aaff;
+        }
+        100% {
+          box-shadow: 0 0 30px #00aaff;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateY(-50px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes shimmer {
+        0% {
+          text-shadow: 2px 2px 10px #00c3ff;
+        }
+        50% {
+          text-shadow: 2px 2px 25px #00c3ff;
+        }
+        100% {
+          text-shadow: 2px 2px 10px #00c3ff;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blur-image"></div>
+    <div class="moon"></div>
+    <!-- Placed after the blur to be on top -->
+    <div class="leaf-container">
+      <img
+        src="https://i.postimg.cc/d0SvfxYf/Pngtree-golden-leaf-7003036.png"
+        class="leaf left-leaf"
+      />
+      <img
+        src="https://i.postimg.cc/d0SvfxYf/Pngtree-golden-leaf-7003036.png"
+        class="leaf right-leaf"
+      />
+    </div>
+    <div class="moon-container">
+      <img
+        src="https://i.postimg.cc/XvjgpstQ/5e9c337a6ad25b00047243c2.png"
+        class="moon"
+      />
+    </div>
+
+    <!-- Other content here -->
+  </body>
+  <body>
+    <!-- Starry Sky -->
+    <div class="stars"></div>
+
+    <!-- Realistic Clouds -->
+    <img
+      src="https://i.postimg.cc/Y0ZWq0k6/10-cloud-png-image-thumb.png"
+      class="cloud cloud1"
+    />
+    <img
+      src="https://i.postimg.cc/Y0ZWq0k6/10-cloud-png-image-thumb.png"
+      class="cloud cloud2"
+    />
+
+    <!-- Crescent Moon -->
+    <img
+      src="https://i.postimg.cc/XvjgpstQ/5e9c337a6ad25b00047243c2.png"
+      class="moon"
+    />
+
+    <!-- Floating Lanterns -->
+    <img
+      src="https://i.postimg.cc/N0mphh6C/Pngtree-gold-islamic-lantern-design-6234908.png"
+      class="lantern lantern1"
+    />
+    <img
+      src="https://i.postimg.cc/N0mphh6C/Pngtree-gold-islamic-lantern-design-6234908.png"
+      class="lantern lantern2"
+    />
+    <img
+      src="https://i.postimg.cc/N0mphh6C/Pngtree-gold-islamic-lantern-design-6234908.png"
+      class="lantern lantern3"
+    />
+
+    <!-- Ramadan Mubarak Greeting -->
+    <div class="greeting">
+      <h1>✨️ Ramadan Mubarak! ✨️</h1>
+      <p>
+        May this sacred month bring you peace, joy, and endless blessings to you
+        and your family . ✨️
+      </p>
+    </div>
+
+    <script>
+      // Generate Random Stars
+      const starContainer = document.querySelector(".stars")
+      for (let i = 0; i < 100; i++) {
+        let star = document.createElement("div")
+        star.classList.add("star")
+        star.style.left = Math.random() * 100 + "vw"
+        star.style.top = Math.random() * 100 + "vh"
+        star.style.animationDuration = Math.random() * 2 + 1 + "s"
+        starContainer.appendChild(star)
+      }
+    </script>
+  </body>
+</html>
